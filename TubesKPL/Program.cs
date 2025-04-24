@@ -1,2 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System.Collections.Generic;
+using TubesKPL;
+CuciKendaraan cuci = new CuciKendaraan();
+Console.WriteLine("================================");
+Console.WriteLine("Selamat Datang di ACuciKendaraan");
+Console.WriteLine("================================");
+Console.Write("Masukkan Nama Kendaraan : ");
+string namaK = Console.ReadLine();
+Console.Write("Masukkan Jenis Kendaraan : ");
+string jenisK = Console.ReadLine();
+ACuciKendaraan aCuci = new ACuciKendaraan(namaK, jenisK);
+cuci.Cuci(aCuci);
+ProsesCuci proses = new ProsesCuci();
+proses.kerjakan(aCuci);
