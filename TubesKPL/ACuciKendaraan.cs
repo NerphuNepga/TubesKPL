@@ -8,19 +8,20 @@ namespace TubesKPL
 {
     class ACuciKendaraan
     {
-        public string namaKendaraan;
-        public string jenisKendaaraan;
+        public string namaKendaraan { get; set; }
+        public string jenisKendaraan { get; set; }
 
+        public ACuciKendaraan() { }
         public ACuciKendaraan(string namaKendaraan, string jenisKendaaraan)
         {
             this.namaKendaraan = namaKendaraan;
-            this.jenisKendaaraan = jenisKendaaraan;
+            this.jenisKendaraan = jenisKendaaraan;
         }
         public string getNamaKendaraan() {
             return this.namaKendaraan;
         }
         public string getJenisKendaraan() {
-            return this.jenisKendaaraan;
+            return this.jenisKendaraan;
         }
     }
 }
