@@ -9,6 +9,7 @@ namespace TubesKPL
     enum State { Masuk, Siram, Sabun, Keringkan }
     class ProsesCuci
     {
+        public float jumlah = 0;
         State state;
         public ProsesCuci()
         {
@@ -42,11 +43,13 @@ namespace TubesKPL
                     if (input == "Siram")
                     {
                         Siram();
+                        jumlah += 5000;
                         Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disiram");
                     }
                     else if (input == "Sabun")
                     {
                         Sabun();
+                        jumlah += 5000;
                         Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disabun");
                     }
                     else if (input == "Keringkan")
@@ -63,6 +66,7 @@ namespace TubesKPL
                     if (input == "Sabun")
                     {
                         Sabun();
+                        jumlah += 5000;
                         Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disabun");
                     }
                     else if (input == "Keringkan")
@@ -72,6 +76,7 @@ namespace TubesKPL
                     }
                     else if(input == "Siram")
                     {
+                        jumlah += 5000;
                         Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disiram lagi");
                     }
                     else
@@ -83,6 +88,7 @@ namespace TubesKPL
                     if (input == "Siram")
                     {
                         Siram();
+                        jumlah += 5000;
                         Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disiram");
                     }
                     else if (input == "Keringkan")
@@ -92,6 +98,7 @@ namespace TubesKPL
                     }
                     else if(input == "Sabun")
                     {
+                        jumlah += 5000;
                         Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang ditambahi sabun");
                     }
                     else
@@ -101,6 +108,7 @@ namespace TubesKPL
                 }
                 
             }
+            Console.WriteLine();
             Console.WriteLine(aCuci.getNamaKendaraan() + " Sudah siap diambil");
         }
     }
