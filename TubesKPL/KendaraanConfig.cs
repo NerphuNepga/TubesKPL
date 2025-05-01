@@ -11,12 +11,14 @@ namespace TubesKPL
     {
         public ACuciKendaraan aCuciConfig;
         public const string filepath = @"kendaraan_config.json";
+
         public ACuciKendaraan ReadConfigFile()
         {
             String configJsonData = File.ReadAllText(filepath);
             aCuciConfig = JsonSerializer.Deserialize<ACuciKendaraan>(configJsonData);
             return aCuciConfig;
         }
+
         private void WriteNewConfigFile()
         {
             JsonSerializerOptions options = new JsonSerializerOptions()
@@ -24,12 +26,19 @@ namespace TubesKPL
                 WriteIndented = true,
             };
 
-            String jsonString = JsonSerializer.Serialize(aCuciConfig);
+            String jsonString = JsonSerializer.Serialize(aCuciConfig, options);
             File.WriteAllText(filepath, jsonString);
         }
+
         private void SetDefault()
         {
             aCuciConfig = new ACuciKendaraan("Mobil Default", "Mobil");
+        }
+
+        public void UpdateConfig(ACuciKendaraan config)
+        {
+            aCuciConfig = config;
+            WriteNewConfigFile();
         }
 
         public KendaraanConfig()
