@@ -17,7 +17,7 @@ namespace TubesKPL
             {
                 if (aCuci.getJenisKendaraan() == jenis[i])
                 {
-                    Console.WriteLine(aCuci.getNamaKendaraan() + " sedang antri di " + tempat[i]);
+                    Console.WriteLine(aCuci.getNamaKendaraan() + " sedang antri di " + tempat[i] + "\n");
                 }
             }
         }
