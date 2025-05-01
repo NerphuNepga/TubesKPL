@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dokumen Kuliah\\Semester 4\\Konstruksi Perangkat Lunak\\Tubes\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj": {}
+    "C:\\Users\\Rendy\\Source\\Repos\\APITubesKPL\\API\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj": {}
   },
   "projects": {
-    "D:\\Dokumen Kuliah\\Semester 4\\Konstruksi Perangkat Lunak\\Tubes\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj": {
+    "C:\\Users\\Rendy\\Source\\Repos\\APITubesKPL\\API\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dokumen Kuliah\\Semester 4\\Konstruksi Perangkat Lunak\\Tubes\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj",
+        "projectUniqueName": "C:\\Users\\Rendy\\Source\\Repos\\APITubesKPL\\API\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj",
         "projectName": "ACuciKendaraan",
-        "projectPath": "D:\\Dokumen Kuliah\\Semester 4\\Konstruksi Perangkat Lunak\\Tubes\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj",
-        "packagesPath": "C:\\Users\\adrian\\.nuget\\packages\\",
-        "outputPath": "D:\\Dokumen Kuliah\\Semester 4\\Konstruksi Perangkat Lunak\\Tubes\\ACuciKendaraan\\ACuciKendaraan\\obj\\",
+        "projectPath": "C:\\Users\\Rendy\\Source\\Repos\\APITubesKPL\\API\\ACuciKendaraan\\ACuciKendaraan\\ACuciKendaraan.csproj",
+        "packagesPath": "C:\\Users\\Rendy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rendy\\Source\\Repos\\APITubesKPL\\API\\ACuciKendaraan\\ACuciKendaraan\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rendy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

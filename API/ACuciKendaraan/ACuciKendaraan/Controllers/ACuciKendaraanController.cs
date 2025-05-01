@@ -9,7 +9,7 @@ namespace ACuciKendaraan.Controllers
     {
         private static readonly List<ACuciKendaraan> cucikendaraan = new()
         {
-            new ACuciKendaraan("Supra","Notor")
+            new ACuciKendaraan("Supra","Motor",State.Masuk)
         };
         [HttpGet]
         public IEnumerable<ACuciKendaraan> Get()
@@ -32,6 +32,16 @@ namespace ACuciKendaraan.Controllers
         {
             cucikendaraan.Add(mhs);
             return "Data berhasil ditambah";
+        }
+        [HttpGet("GetProsesState/{id}")]
+        public String GetProsesState(int id)
+        {
+            return ""+ cucikendaraan[id].GetState();
+        }
+        [HttpPost("Proses/{id}")]
+        public String GetProses(int id, string input)
+        {
+            return cucikendaraan[id].ProsesLangkah(input);   
         }
     }
 }

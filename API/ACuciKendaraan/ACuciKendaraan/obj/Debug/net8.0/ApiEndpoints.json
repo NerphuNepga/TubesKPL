@@ -98,6 +98,63 @@
     ]
   },
   {
+    "ContainingType": "ACuciKendaraan.Controllers.ACuciKendaraanController",
+    "Method": "GetProsesState",
+    "RelativePath": "api/ACuciKendaraan/GetProsesState/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ACuciKendaraan.Controllers.ACuciKendaraanController",
+    "Method": "GetProses",
+    "RelativePath": "api/ACuciKendaraan/Proses/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "input",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ACuciKendaraan.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

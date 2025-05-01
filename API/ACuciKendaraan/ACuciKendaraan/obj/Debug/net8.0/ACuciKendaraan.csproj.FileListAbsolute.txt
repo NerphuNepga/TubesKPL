@@ -34,3 +34,40 @@ D:\Dokumen Kuliah\Semester 4\Konstruksi Perangkat Lunak\Tubes\ACuciKendaraan\ACu
 D:\Dokumen Kuliah\Semester 4\Konstruksi Perangkat Lunak\Tubes\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.pdb
 D:\Dokumen Kuliah\Semester 4\Konstruksi Perangkat Lunak\Tubes\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.genruntimeconfig.cache
 D:\Dokumen Kuliah\Semester 4\Konstruksi Perangkat Lunak\Tubes\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ref\ACuciKendaraan.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\refint\ACuciKendaraan.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.pdb
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.csproj.AssemblyReference.cache
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.AssemblyInfoInputs.cache
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.AssemblyInfo.cs
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.csproj.CoreCompileInputs.cache
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.sourcelink.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\appsettings.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\ACuciKendaraan.staticwebassets.endpoints.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\ACuciKendaraan.exe
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\ACuciKendaraan.deps.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\ACuciKendaraan.runtimeconfig.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\ACuciKendaraan.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\ACuciKendaraan.pdb
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\scopedcss\bundle\ACuciKendaraan.styles.css
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets\msbuild.ACuciKendaraan.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets\msbuild.ACuciKendaraan.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets\msbuild.build.ACuciKendaraan.props
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ACuciKendaraan.props
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ACuciKendaraan.props
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKen.98EBA979.Up2Date
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ACuciKendaraan.genruntimeconfig.cache
+C:\Users\Rendy\Source\Repos\APITubesKPL\API\ACuciKendaraan\ACuciKendaraan\obj\Debug\net8.0\ref\ACuciKendaraan.dll
