@@ -1,15 +1,17 @@
 using KonversiHarga;
+using MenuACuciKendaraan;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Diagnostics;
 using TubesKPL;
+
 
 KendaraanConfig config = new KendaraanConfig();
 CuciKendaraan cuci = new CuciKendaraan();
 ProsesCuci proses = new ProsesCuci();
 
-Console.WriteLine("================================");
-Console.WriteLine("Selamat Datang di ACuciKendaraan");
-Console.WriteLine("================================");
+string input = "1";
+Menu.MainMenu();
 
 Console.Write("Masukkan Nama Kendaraan : ");
 string namaK = Console.ReadLine();
