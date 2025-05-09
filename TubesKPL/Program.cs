@@ -1,3 +1,4 @@
+using KonversiHarga;
 using System.Collections.Generic;
 using System.Diagnostics;
 using TubesKPL;
@@ -22,11 +23,8 @@ config.UpdateConfig(aCuci);
 cuci.Cuci(aCuci);
 proses.kerjakan(aCuci);
 
-float total = 0;
-if (jenisK.ToLower() == "mobil") { total = 2 * proses.jumlah; }
-else if (jenisK.ToLower() == "truk") { total = 3 * proses.jumlah; }
-else if (jenisK.ToLower() == "kereta" || jenisK.ToLower() == "pesawat") { total = 10 * proses.jumlah; }
-else { total = proses.jumlah; }
+double total = Konversi.KonversiHarga(proses.jumlah, jenisK.ToLower()); ;
+
 
 ACuciKendaraan kci = config.ReadConfigFile();
 
@@ -40,5 +38,16 @@ Console.WriteLine("Total Harga      : Rp. " + total);
 
 Console.WriteLine("Pilih metode pembayaran: Kartu Kredit, Transfer, Cash.");
 string metodeBayar = Console.ReadLine();
-IMetodePembayaran bayar = pemilihanMetode.PilihMetode(metodeBayar, total);
-bayar.Bayar(total);
+try
+{
+    var metodePembayaran = PemilihanMetode.PilihMetode(metodeBayar, total);
+
+    Type tipeBayar = typeof(MetodePembayaran<>).MakeGenericType(metodePembayaran.GetType());
+    dynamic bayar = Activator.CreateInstance(tipeBayar, metodePembayaran);
+
+    bayar.Bayar(total);
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}

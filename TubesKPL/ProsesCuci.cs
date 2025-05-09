@@ -9,7 +9,7 @@ namespace TubesKPL
     enum State { Masuk, Siram, Sabun, Keringkan }
     class ProsesCuci
     {
-        public float jumlah = 0;
+        public double jumlah = 0;
         State state;
         public ProsesCuci()
         {
