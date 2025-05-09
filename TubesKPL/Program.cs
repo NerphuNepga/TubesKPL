@@ -13,11 +13,9 @@ ProsesCuci proses = new ProsesCuci();
 string input = "1";
 Menu.MainMenu();
 
-Console.Write("Masukkan Nama Kendaraan : ");
-string namaK = Console.ReadLine();
-
-Console.Write("Masukkan Jenis Kendaraan : ");
-string jenisK = Console.ReadLine();
+string[] kendaraan = Menu.TambahKendaraan();
+string namaK = kendaraan[0];
+string jenisK = kendaraan[1];
 
 ACuciKendaraan aCuci = new ACuciKendaraan(namaK, jenisK);
 config.UpdateConfig(aCuci);
