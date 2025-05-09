@@ -10,12 +10,12 @@ KendaraanConfig config = new KendaraanConfig();
 CuciKendaraan cuci = new CuciKendaraan();
 ProsesCuci proses = new ProsesCuci();
 
-string input = "1";
 Menu.MainMenu();
 
-string[] kendaraan = Menu.TambahKendaraan();
-string namaK = kendaraan[0];
-string jenisK = kendaraan[1];
+string namaK = Console.ReadLine();
+
+Console.Write("Masukkan Jenis Kendaraan : ");
+string jenisK = Console.ReadLine();
 
 ACuciKendaraan aCuci = new ACuciKendaraan(namaK, jenisK);
 config.UpdateConfig(aCuci);

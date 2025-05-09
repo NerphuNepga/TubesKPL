@@ -13,17 +13,5 @@
             Console.WriteLine("0. Keluar");
             Console.WriteLine("================================");
         }
-
-        public static string[] TambahKendaraan()
-        {
-            Console.Write("Masukkan Nama Kendaraan : ");
-            string namaK = Console.ReadLine();
-
-            Console.Write("Masukkan Jenis Kendaraan : ");
-            string jenisK = Console.ReadLine();
-
-            string[] hasil = { namaK, jenisK};
-            return hasil;
-        }
     }
 }
