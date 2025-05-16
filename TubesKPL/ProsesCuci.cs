@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,169 +35,115 @@ namespace TubesKPL
 
         public void kerjakan(ACuciKendaraan aCuci)
         {
+            if (aCuci == null)
+                throw new ArgumentNullException(nameof(aCuci), "Precondition failed: aCuci tidak boleh null.");
+
             Console.WriteLine("Kendaraan anda saat ini sudah " + getState());
             Console.WriteLine("List perintah : Siram, Sabun, Keringkan");
+
             while (state != State.Keringkan)
             {
                 Console.Write("Manage Kendaraan Anda : ");
                 string input = Console.ReadLine();
-                if (getState() == State.Masuk)
+
+                if (string.IsNullOrWhiteSpace(input))
                 {
+                    Console.WriteLine("Input tidak boleh kosong.");
+                    continue;
+                }
+
+                Console.WriteLine(ProsesInput(aCuci, input));
+            }
+
+            Console.WriteLine();
+            Console.WriteLine(aCuci.getNamaKendaraan() + " Sudah siap diambil");
+        }
+
+        public string kerjakanAPI(ACuciKendaraan aCuci, string input)
+        {
+            // Preconditions
+            if (aCuci == null)
+                throw new ArgumentNullException(nameof(aCuci), "Precondition failed: aCuci tidak boleh null.");
+            if (string.IsNullOrWhiteSpace(input))
+                throw new ArgumentException("Precondition failed: input tidak boleh kosong.", nameof(input));
+
+            string result = ProsesInput(aCuci, input);
+
+            // Postcondition
+            Debug.Assert(!string.IsNullOrWhiteSpace(result), "Postcondition failed: hasil proses tidak boleh kosong.");
+
+            return result;
+        }
+
+        private string ProsesInput(ACuciKendaraan aCuci, string input)
+        {
+            switch (state)
+            {
+                case State.Masuk:
                     if (input == "Siram")
                     {
                         Siram();
-                        aCuci.SetState(getState());
+                        aCuci.SetState(state);
                         jumlah += 5000;
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disiram");
+                        return aCuci.getNamaKendaraan() + " Sedang disiram";
                     }
                     else if (input == "Sabun")
                     {
                         Sabun();
-                        aCuci.SetState(getState());
+                        aCuci.SetState(state);
                         jumlah += 5000;
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disabun");
+                        return aCuci.getNamaKendaraan() + " Sedang disabun";
                     }
                     else if (input == "Keringkan")
                     {
-                        Console.WriteLine("Kendaraan anda belum dicuci");
+                        return "Kendaraan anda belum dicuci";
                     }
-                    else
-                    {
-                        Console.WriteLine("Perintah tidak tersedia");
-                    }
-                }
-                else if (getState() == State.Siram)
-                {
+                    break;
+
+                case State.Siram:
                     if (input == "Sabun")
                     {
                         Sabun();
-                        aCuci.SetState(getState());
+                        aCuci.SetState(state);
                         jumlah += 5000;
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disabun");
+                        return aCuci.getNamaKendaraan() + " Sedang disabun";
                     }
                     else if (input == "Keringkan")
                     {
                         Keringkan();
-                        aCuci.SetState(getState());
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang dikeringkan");
+                        aCuci.SetState(state);
+                        return aCuci.getNamaKendaraan() + " Sedang dikeringkan";
                     }
                     else if (input == "Siram")
                     {
                         jumlah += 5000;
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disiram lagi");
+                        return aCuci.getNamaKendaraan() + " Sedang disiram lagi";
                     }
-                    else
-                    {
-                        Console.WriteLine("Perintah tidak tersedia");
-                    }
-                }
-                else if (getState() == State.Sabun)
-                {
+                    break;
+
+                case State.Sabun:
                     if (input == "Siram")
                     {
                         Siram();
-                        aCuci.SetState(getState());
+                        aCuci.SetState(state);
                         jumlah += 5000;
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang disiram");
+                        return aCuci.getNamaKendaraan() + " Sedang disiram";
                     }
                     else if (input == "Keringkan")
                     {
                         Keringkan();
-                        aCuci.SetState(getState());
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang dikeringkan");
+                        aCuci.SetState(state);
+                        return aCuci.getNamaKendaraan() + " Sedang dikeringkan";
                     }
                     else if (input == "Sabun")
                     {
                         jumlah += 5000;
-                        Console.WriteLine(aCuci.getNamaKendaraan() + " Sedang ditambahi sabun");
+                        return aCuci.getNamaKendaraan() + " Sedang ditambahi sabun";
                     }
-                    else
-                    {
-                        Console.WriteLine("Perintah tidak tersedia");
-                    }
-                }
+                    break;
+            }
 
-            }
-            Console.WriteLine();
-            Console.WriteLine(aCuci.getNamaKendaraan() + " Sudah siap diambil");
-        }
-        public string kerjakanAPI(ACuciKendaraan aCuci, string input)
-        {
-            if (getState() == State.Masuk)
-            {
-                if (input == "Siram")
-                {
-                    Siram();
-                    aCuci.SetState(getState());
-                    jumlah += 5000;
-                    return aCuci.getNamaKendaraan() + " Sedang disiram";
-                }
-                else if (input == "Sabun")
-                {
-                    Sabun();
-                    aCuci.SetState(getState());
-                    jumlah += 5000;
-                    return aCuci.getNamaKendaraan() + " Sedang disabun";       }
-                else if (input == "Keringkan")
-                {
-                    return "Kendaraan anda belum dicuci";
-                }
-                else
-                {
-                    return "Perintah tidak tersedia";
-                }
-            }
-            else if (getState() == State.Siram)
-            {
-                if (input == "Sabun")
-                {
-                    Sabun();
-                    aCuci.SetState(getState());
-                    jumlah += 5000;
-                    return aCuci.getNamaKendaraan() + " Sedang disabun";
-                }
-                else if (input == "Keringkan")
-                {
-                    Keringkan();
-                    aCuci.SetState(getState());
-                    return aCuci.getNamaKendaraan() + " Sedang dikeringkan";
-                }
-                else if (input == "Siram")
-                {
-                    jumlah += 5000;
-                    return aCuci.getNamaKendaraan() + " Sedang disiram lagi";
-                }
-                else
-                {
-                    return "Perintah tidak tersedia";
-                }
-            }
-            else if (getState() == State.Sabun)
-            {
-                if (input == "Siram")
-                {
-                    Siram();
-                    aCuci.SetState(getState());
-                    jumlah += 5000;
-                    return aCuci.getNamaKendaraan() + " Sedang disiram";
-                }
-                else if (input == "Keringkan")
-                {
-                    Keringkan();
-                    aCuci.SetState(getState());
-                    return aCuci.getNamaKendaraan() + " Sedang dikeringkan";
-                }
-                else if (input == "Sabun")
-                {
-                    jumlah += 5000;
-                    return aCuci.getNamaKendaraan() + " Sedang ditambahi sabun";
-                }
-                else
-                {
-                    return "Perintah tidak tersedia";
-                }
-            }
-            return "[500] Command Tidak Tersedia";
+            return "Perintah tidak tersedia";
         }
     }
 }

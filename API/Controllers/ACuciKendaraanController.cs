@@ -52,18 +52,18 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public ActionResult<string> Post([FromBody] ACuciKendaraan mhs)
+        public ActionResult<string> Post([FromBody] ACuciKendaraan kendaraan)
         {
             // Precondition
-            if (mhs == null)
+            if (kendaraan == null)
                 return BadRequest("Data kendaraan tidak boleh null.");
-            if (string.IsNullOrWhiteSpace(mhs.Nama) || string.IsNullOrWhiteSpace(mhs.Tipe))
+            if (string.IsNullOrWhiteSpace(kendaraan.namaKendaraan) || string.IsNullOrWhiteSpace(kendaraan.jenisKendaraan))
                 return BadRequest("Nama dan Tipe tidak boleh kosong.");
 
-            cucikendaraan.Add(mhs);
+            cucikendaraan.Add(kendaraan);
 
             // Postcondition
-            Debug.Assert(cucikendaraan.Contains(mhs), "Postcondition failed: data tidak ditambahkan");
+            Debug.Assert(cucikendaraan.Contains(kendaraan), "Postcondition failed: data tidak ditambahkan");
 
             return "Data berhasil ditambah";
         }
