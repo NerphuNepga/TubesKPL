@@ -1,6 +1,0 @@
-@ACuciKendaraan_HostAddress = http://localhost:5133
-
-GET {{ACuciKendaraan_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

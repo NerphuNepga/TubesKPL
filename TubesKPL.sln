@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KonversiHarga", "KonversiHa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuACuciKendaraan", "Menu\MenuACuciKendaraan.csproj", "{CEC4ED99-ED0D-4BD1-BF51-7572C7E46076}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{2D788FD8-13DB-4D11-ACC1-CA37A41BE456}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CEC4ED99-ED0D-4BD1-BF51-7572C7E46076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEC4ED99-ED0D-4BD1-BF51-7572C7E46076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEC4ED99-ED0D-4BD1-BF51-7572C7E46076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D788FD8-13DB-4D11-ACC1-CA37A41BE456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D788FD8-13DB-4D11-ACC1-CA37A41BE456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D788FD8-13DB-4D11-ACC1-CA37A41BE456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D788FD8-13DB-4D11-ACC1-CA37A41BE456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
