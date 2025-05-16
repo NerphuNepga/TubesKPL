@@ -75,7 +75,7 @@ namespace TubesKPL
             return result;
         }
 
-        private string ProsesInput(ACuciKendaraan aCuci, string input)
+        public string ProsesInput(ACuciKendaraan aCuci, string input)
         {
             switch (state)
             {

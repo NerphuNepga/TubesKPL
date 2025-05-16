@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace TubesKPL
 {
-    class CuciKendaraan
+    public class CuciKendaraan
     {
         private readonly string[] jenis = { "Mobil", "Motor", "Truk", "Pesawat", "Kereta" };
         private readonly string[] tempat = { "Garasi", "Garasi", "Lapangan", "Hangar", "Stasiun" };
@@ -26,7 +26,7 @@ namespace TubesKPL
             {
                 if (aCuci.getJenisKendaraan() == jenis[i])
                 {
-                    Console.WriteLine(aCuci.getNamaKendaraan() + " sedang antri di " + tempat[i] + "\n");
+                    Console.WriteLine(aCuci.getNamaKendaraan() + " sedang antri di " + tempat[i]);
                     ditemukan = true;
                     break;
                 }
