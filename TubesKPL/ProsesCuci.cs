@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TubesKPL
 {
-    public enum State { Masuk, Siram, Sabun, Keringkan }
+    public enum State { Masuk, Cuci, Service, Keluar }
     public class ProsesCuci
     {
         public double jumlah = 0;
@@ -16,17 +16,17 @@ namespace TubesKPL
         {
             state = State.Masuk;
         }
-        public void Siram()
+        public void Cuci()
         {
-            state = State.Siram;
+            state = State.Cuci;
         }
-        public void Sabun()
+        public void Service()
         {
-            state = State.Sabun;
+            state = State.Service;
         }
-        public void Keringkan()
+        public void Keluar()
         {
-            state = State.Keringkan;
+            state = State.Keluar;
         }
         public State getState()
         {
@@ -39,9 +39,9 @@ namespace TubesKPL
                 throw new ArgumentNullException(nameof(aCuci), "Precondition failed: aCuci tidak boleh null.");
 
             Console.WriteLine("Kendaraan anda saat ini sudah " + getState());
-            Console.WriteLine("List perintah : Siram, Sabun, Keringkan");
+            Console.WriteLine("List perintah : Cuci, Service, Keluar");
 
-            while (state != State.Keringkan)
+            while (state != State.Keluar)
             {
                 Console.Write("Manage Kendaraan Anda : ");
                 string input = Console.ReadLine();
@@ -80,65 +80,65 @@ namespace TubesKPL
             switch (state)
             {
                 case State.Masuk:
-                    if (input == "Siram")
+                    if (input == "Cuci")
                     {
-                        Siram();
+                        Cuci();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang disiram";
+                        return aCuci.getNamaKendaraan() + " Sedang dicuci";
                     }
-                    else if (input == "Sabun")
+                    else if (input == "Service")
                     {
-                        Sabun();
+                        Service();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang disabun";
+                        return aCuci.getNamaKendaraan() + " Sedang diservice";
                     }
-                    else if (input == "Keringkan")
+                    else if (input == "Keluar")
                     {
                         return "Kendaraan anda belum dicuci";
                     }
                     break;
 
-                case State.Siram:
-                    if (input == "Sabun")
+                case State.Cuci:
+                    if (input == "Service")
                     {
-                        Sabun();
+                        Service();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang disabun";
+                        return aCuci.getNamaKendaraan() + " Sedang diservice";
                     }
-                    else if (input == "Keringkan")
+                    else if (input == "Keluar")
                     {
-                        Keringkan();
+                        Keluar();
                         aCuci.SetState(state);
-                        return aCuci.getNamaKendaraan() + " Sedang dikeringkan";
+                        return aCuci.getNamaKendaraan() + " Sedang dikeluar";
                     }
-                    else if (input == "Siram")
+                    else if (input == "Cuci")
                     {
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang disiram lagi";
+                        return aCuci.getNamaKendaraan() + " Sedang dicuci lagi";
                     }
                     break;
 
-                case State.Sabun:
-                    if (input == "Siram")
+                case State.Service:
+                    if (input == "Cuci")
                     {
-                        Siram();
+                        Cuci();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang disiram";
+                        return aCuci.getNamaKendaraan() + " Sedang dicuci";
                     }
-                    else if (input == "Keringkan")
+                    else if (input == "Keluar")
                     {
-                        Keringkan();
+                        Keluar();
                         aCuci.SetState(state);
-                        return aCuci.getNamaKendaraan() + " Sedang dikeringkan";
+                        return aCuci.getNamaKendaraan() + " Sedang dikeluar";
                     }
-                    else if (input == "Sabun")
+                    else if (input == "Service")
                     {
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang ditambahi sabun";
+                        return aCuci.getNamaKendaraan() + " Sedang ditambahi service";
                     }
                     break;
             }
