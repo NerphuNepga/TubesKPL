@@ -18,10 +18,10 @@ namespace TubesKPL
             this.jenisKendaraan = jenisKendaaraan;
             state = State.Masuk;
         }
-        public string getNamaKendaraan() {
+        public string GetNamaKendaraan() {
             return this.namaKendaraan;
         }
-        public string getJenisKendaraan() {
+        public string GetJenisKendaraan() {
             return this.jenisKendaraan;
         }
         public State GetState()

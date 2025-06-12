@@ -41,7 +41,7 @@ while(input != 0)
     Console.Write("Masukkan Perintah : ");
     input = int.Parse(Console.ReadLine());
 }
-double total = Konversi.KonversiHarga(proses.jumlah, aCuci.getJenisKendaraan().ToLower()); ;
+double total = Konversi.KonversiHarga(proses.jumlah, aCuci.GetJenisKendaraan().ToLower()); ;
 
 ACuciKendaraan kci = config.ReadConfigFile();
 
