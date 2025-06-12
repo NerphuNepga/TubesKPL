@@ -15,18 +15,18 @@ namespace TubesKPL
             //Precondition
             if (aCuci == null)
                 throw new ArgumentNullException(nameof(aCuci), "Precondition failed: aCuci tidak boleh null.");
-            if (string.IsNullOrWhiteSpace(aCuci.getJenisKendaraan()))
+            if (string.IsNullOrWhiteSpace(aCuci.GetJenisKendaraan()))
                 throw new ArgumentException("Precondition failed: Jenis kendaraan tidak boleh kosong.");
-            if (string.IsNullOrWhiteSpace(aCuci.getNamaKendaraan()))
+            if (string.IsNullOrWhiteSpace(aCuci.GetNamaKendaraan()))
                 throw new ArgumentException("Precondition failed: Nama kendaraan tidak boleh kosong.");
 
             bool ditemukan = false;
 
             for (int i = 0; i < jenis.Length; i++)
             {
-                if (aCuci.getJenisKendaraan() == jenis[i])
+                if (aCuci.GetJenisKendaraan() == jenis[i])
                 {
-                    Console.WriteLine(aCuci.getNamaKendaraan() + " sedang antri di " + tempat[i]);
+                    Console.WriteLine(aCuci.GetNamaKendaraan() + " sedang antri di " + tempat[i]);
                     ditemukan = true;
                     break;
                 }

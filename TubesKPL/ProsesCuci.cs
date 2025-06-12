@@ -56,7 +56,7 @@ namespace TubesKPL
             }
 
             Console.WriteLine();
-            Console.WriteLine(aCuci.getNamaKendaraan() + " Sudah siap diambil");
+            Console.WriteLine(aCuci.GetNamaKendaraan() + " Sudah siap diambil");
         }
 
         public string kerjakanAPI(ACuciKendaraan aCuci, string input)
@@ -85,14 +85,14 @@ namespace TubesKPL
                         Cuci();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang dicuci";
+                        return aCuci.GetNamaKendaraan() + " Sedang dicuci";
                     }
                     else if (input == "Service")
                     {
                         Service();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang diservice";
+                        return aCuci.GetNamaKendaraan() + " Sedang diservice";
                     }
                     else if (input == "Keluar")
                     {
@@ -106,18 +106,18 @@ namespace TubesKPL
                         Service();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang diservice";
+                        return aCuci.GetNamaKendaraan() + " Sedang diservice";
                     }
                     else if (input == "Keluar")
                     {
                         Keluar();
                         aCuci.SetState(state);
-                        return aCuci.getNamaKendaraan() + " Sedang dikeluar";
+                        return aCuci.GetNamaKendaraan() + " Sedang dikeluar";
                     }
                     else if (input == "Cuci")
                     {
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang dicuci lagi";
+                        return aCuci.GetNamaKendaraan() + " Sedang dicuci lagi";
                     }
                     break;
 
@@ -127,18 +127,18 @@ namespace TubesKPL
                         Cuci();
                         aCuci.SetState(state);
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang dicuci";
+                        return aCuci.GetNamaKendaraan() + " Sedang dicuci";
                     }
                     else if (input == "Keluar")
                     {
                         Keluar();
                         aCuci.SetState(state);
-                        return aCuci.getNamaKendaraan() + " Sedang dikeluar";
+                        return aCuci.GetNamaKendaraan() + " Sedang dikeluar";
                     }
                     else if (input == "Service")
                     {
                         jumlah += 5000;
-                        return aCuci.getNamaKendaraan() + " Sedang ditambahi service";
+                        return aCuci.GetNamaKendaraan() + " Sedang ditambahi service";
                     }
                     break;
             }
