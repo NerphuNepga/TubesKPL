@@ -23,7 +23,7 @@ namespace RegisterKendaraan
             List<ACuciKendaraan> ListKendaraan = Form1.GetList();
             for (int i = 0; i < ListKendaraan.Count(); i++)
             {
-                string[] data = { ListKendaraan[i].GetNamaKendaraan(), ListKendaraan[i].GetJenisKendaraan(), ListKendaraan[i].GetState().ToString() };
+                string[] data = { ListKendaraan[i].GetNamaPemilik(), ListKendaraan[i].GetJenisKendaraan(), ListKendaraan[i].GetState().ToString() };
                 dataGridView1.Rows.Add(data);
             }
             btnAksi.UseColumnTextForButtonValue = true;
@@ -36,7 +36,7 @@ namespace RegisterKendaraan
 
             foreach (var item in ListKendaraan)
             {
-                dataGridView1.Rows.Add(item.GetNamaKendaraan(), item.GetJenisKendaraan(), item.GetState().ToString());
+                dataGridView1.Rows.Add(item.GetNamaPemilik(), item.GetJenisKendaraan(), item.GetState().ToString());
             }
         }
 

@@ -7,76 +7,138 @@ using System.Threading.Tasks;
 
 namespace TubesKPL
 {
-    public interface IPembayaran
+    public interface IPembayaran<T>
     {
-        public void ProsesPembayaran(double jumlah);
+        string GetMetodeName();
+        void ProsesPembayaran(double jumlah);
+        T GetDetailPembayaran();
     }
 
-    public class KartuKredit : IPembayaran
+    public class KartuKredit : IPembayaran<string>
     {
-        public string nomorKartu {  get; set; }
+        private string nomorKartu;
+
+        public KartuKredit(string nomorKartu)
+        {
+            Debug.Assert(!string.IsNullOrWhiteSpace(nomorKartu), "Nomor kartu tidak boleh kosong.");
+            this.nomorKartu = nomorKartu;
+        }
+
+        public string GetMetodeName() { return "Kartu Kredit"; }
+        public string GetDetailPembayaran() { return nomorKartu; }
 
         public void ProsesPembayaran(double jumlah)
         {
-            Debug.Assert(jumlah >= 0);
-            Console.WriteLine("Membayar dengan kartu kredit bernomor " + nomorKartu + " sejumlah Rp " + jumlah + ".");
+            Debug.Assert(jumlah >= 0, "Jumlah pembayaran tidak boleh negatif.");
+            Console.WriteLine($"Membayar dengan {GetMetodeName()} bernomor {nomorKartu} sejumlah Rp {jumlah}.");
         }
     }
-    public class Transfer : IPembayaran
+    public class Transfer : IPembayaran<string>
     {
-        public string nomorRekening {  get; set; }
+        private string nomorRekening;
+
+        public Transfer(string nomorRekening)
+        {
+            Debug.Assert(!string.IsNullOrWhiteSpace(nomorRekening), "Nomor rekening tidak boleh kosong.");
+            this.nomorRekening = nomorRekening;
+        }
+
+        public string GetMetodeName() { return "Transfer Bank"; }
+        public string GetDetailPembayaran() { return nomorRekening; }
+
         public void ProsesPembayaran(double jumlah)
         {
-            Debug.Assert(jumlah >= 0);
-            Console.WriteLine("Membayar dengan cara transfer dengan nomor rekening " + nomorRekening + " sejumlah Rp " + jumlah + ".");
+            Debug.Assert(jumlah >= 0, "Jumlah pembayaran tidak boleh negatif.");
+            Console.WriteLine($"Membayar dengan {GetMetodeName()} dengan nomor rekening {nomorRekening} sejumlah Rp {jumlah}.");
         }
     }
-    public class Cash : IPembayaran
+    public class Cash : IPembayaran<int>
     {
+        private int uangTunai;
+
+        public Cash(int uangTunai)
+        {
+            Debug.Assert(uangTunai >= 0, "Jumlah uang tunai tidak boleh negatif.");
+            this.uangTunai = uangTunai;
+        }
+
+        public string GetMetodeName() { return "Cash"; }
+        public int GetDetailPembayaran() { return uangTunai; }
+
         public void ProsesPembayaran(double jumlah)
         {
-            Debug.Assert(jumlah >= 0);
-            Console.WriteLine("Membayar dengan cash sejumlah Rp " + jumlah + ".");
-        }
-    }
-    public static class PemilihanMetode
-    {
-        public static IPembayaran PilihMetode(string metode,  double jumlah)
-        {
-            Debug.Assert(!string.IsNullOrWhiteSpace(metode));
-            Debug.Assert(jumlah >= 0);
-            switch (metode.ToLower())
+            Debug.Assert(jumlah >= 0, "Jumlah pembayaran tidak boleh negatif.");
+            Console.WriteLine($"Membayar dengan {GetMetodeName()} sejumlah Rp {jumlah} dengan jumlah uang Rp {uangTunai}.");
+            double kembalian = uangTunai - jumlah;
+            if (kembalian < 0)
             {
-                case "kartu kredit":
-                    Console.Write("Masukan nomor kartu: ");
-                    string noKartu = Console.ReadLine();
-                    KartuKredit kartuKredit = new KartuKredit { nomorKartu = noKartu };
-                    return kartuKredit;
-                case "transfer":
-                    Console.Write("Masukan nomor rekening: ");
-                    string noRekening = Console.ReadLine();
-                    Transfer transfer = new Transfer { nomorRekening = noRekening };
-                    return transfer;
-                case "cash":
-                    Cash cash = new Cash();
-                    return cash;
-                default:
-                    throw new ArgumentException("Metode tidak dikenal.");
+                Console.WriteLine($"Uang tidak cukup. Kurang Rp {-kembalian}.");
+            }
+            else
+            {
+                Console.WriteLine($"Kembalian Rp {kembalian}.");
             }
         }
     }
-    public class MetodePembayaran<T> where T : IPembayaran
+
+    abstract class MetodePembayaranCreator<TDetail>
     {
-        private T metodeBayar {  get; set; }
+        public abstract IPembayaran<TDetail> FactoryMethod();
 
-        public MetodePembayaran(T metodeBayar)
+        public string ProsesPembayaranUtama(double jumlah)
         {
-            this.metodeBayar = metodeBayar;
-        }
+            var pembayaran = FactoryMethod(); // Mendapatkan produk generik
+            pembayaran.ProsesPembayaran(jumlah); // Memanggil operasi pada produk
+            Console.WriteLine($"Detail pembayaran: {pembayaran.GetDetailPembayaran()}"); // Memanggil generic method pada produk
 
-        public void Bayar(double jumlah)
-        {
-            metodeBayar.ProsesPembayaran(jumlah);
+            return $"Creator: Transaksi selesai menggunakan metode {pembayaran.GetMetodeName()}.";
         }
     }
+
+    // Concrete Creator sekarang juga generik dengan tipe detail spesifik
+    class KartuKreditCreator : MetodePembayaranCreator<string>
+    {
+        private string nomorKartu;
+
+        public KartuKreditCreator(string nomorKartu)
+        {
+            this.nomorKartu = nomorKartu;
+        }
+
+        public override IPembayaran<string> FactoryMethod()
+        {
+            return new KartuKredit(nomorKartu);
+        }
+    }
+
+    class TransferCreator : MetodePembayaranCreator<string>
+    {
+        private string nomorRekening;
+
+        public TransferCreator(string nomorRekening)
+        {
+            this.nomorRekening = nomorRekening;
+        }
+
+        public override IPembayaran<string> FactoryMethod()
+        {
+            return new Transfer(nomorRekening);
+        }
+    }
+
+    class CashCreator : MetodePembayaranCreator<int>
+    {
+        private int uangTunai;
+
+        public CashCreator(int uangTunai)
+        {
+            this.uangTunai = uangTunai;
+        }
+
+        public override IPembayaran<int> FactoryMethod()
+        {
+            return new Cash(uangTunai);
+        }
+    }
+
 }

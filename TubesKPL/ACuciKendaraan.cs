@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,18 @@ namespace TubesKPL
 {
     public class ACuciKendaraan
     {
-        public string namaKendaraan { get; set; }
+        public string namaPemilik { get; set; }
         public string jenisKendaraan { get; set; }
         public State state { get; set; }
         public ACuciKendaraan() { }
-        public ACuciKendaraan(string namaKendaraan, string jenisKendaaraan)
+        public ACuciKendaraan(string namaPemilik, string jenisKendaaraan)
         {
-            this.namaKendaraan = namaKendaraan;
+            this.namaPemilik = namaPemilik;
             this.jenisKendaraan = jenisKendaaraan;
             state = State.Masuk;
         }
-        public string GetNamaKendaraan() {
-            return this.namaKendaraan;
+        public string GetNamaPemilik() {
+            return this.namaPemilik;
         }
         public string GetJenisKendaraan() {
             return this.jenisKendaraan;
