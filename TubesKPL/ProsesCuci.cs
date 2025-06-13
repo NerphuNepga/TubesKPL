@@ -146,5 +146,9 @@ namespace TubesKPL
 
             return "Perintah tidak tersedia";
         }
+        public double GetHarga()
+        {
+            return this.jumlah;
+        }
     }
 }

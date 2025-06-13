@@ -14,6 +14,8 @@ namespace RegisterKendaraan
     public partial class Form2 : Form
     {
         private Form3 frm3;
+        private Form4 frm4;
+        List<ACuciKendaraan> ListKendaraan = Form1.GetList();
         public Form2()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace RegisterKendaraan
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            List<ACuciKendaraan> ListKendaraan = Form1.GetList();
+
             for (int i = 0; i < ListKendaraan.Count(); i++)
             {
                 string[] data = { ListKendaraan[i].GetNamaPemilik(), ListKendaraan[i].GetJenisKendaraan(), ListKendaraan[i].GetState().ToString() };
@@ -37,7 +39,15 @@ namespace RegisterKendaraan
 
             foreach (var item in ListKendaraan)
             {
-                dataGridView1.Rows.Add(item.GetNamaPemilik(), item.GetJenisKendaraan(), item.GetState().ToString());
+                if (item.GetState().ToString() == "Keluar")
+                {
+                    btnAksi.Text = "Bayar";
+                }
+                else
+                {
+                    btnAksi.Text = "Kelola";
+                }
+                    dataGridView1.Rows.Add(item.GetNamaPemilik(), item.GetJenisKendaraan(), item.GetState().ToString());
             }
         }
 
@@ -45,14 +55,24 @@ namespace RegisterKendaraan
         {
             if (e.ColumnIndex == dataGridView1.Columns["btnAksi"].Index && e.RowIndex >= 0)
             {
-                if (frm3 == null || frm3.IsDisposed)
+
+                if (ListKendaraan[e.RowIndex].GetState().ToString() == "Keluar")
                 {
-                    frm3 = new Form3(this);
+                    frm4 = new Form4(this, frm3);
+                    frm4.GetDataKendaraan(e.RowIndex);
+                    frm4.Show();
+                }
+                else
+                {
+                    if (frm3 == null || frm3.IsDisposed)
+                    {
+                        frm3 = new Form3(this);
+                    }
+                    frm3.GetDataKendaraan(e.RowIndex);
+                    frm3.Show();
+                    frm3.BringToFront();
                 }
 
-                frm3.GetDataKendaraan(e.RowIndex);
-                frm3.Show();
-                frm3.BringToFront();
             }
         }
 

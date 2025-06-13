@@ -10,7 +10,7 @@ namespace TubesKPL
     public interface IPembayaran<T>
     {
         string GetMetodeName();
-        void ProsesPembayaran(double jumlah);
+        string ProsesPembayaran(double jumlah);
         T GetDetailPembayaran();
     }
 
@@ -27,10 +27,10 @@ namespace TubesKPL
         public string GetMetodeName() { return "Kartu Kredit"; }
         public string GetDetailPembayaran() { return nomorKartu; }
 
-        public void ProsesPembayaran(double jumlah)
+        public string ProsesPembayaran(double jumlah)
         {
             Debug.Assert(jumlah >= 0, "Jumlah pembayaran tidak boleh negatif.");
-            Console.WriteLine($"Membayar dengan {GetMetodeName()} bernomor {nomorKartu} sejumlah Rp {jumlah}.");
+            return $"Membayar dengan {GetMetodeName()} bernomor {nomorKartu} sejumlah Rp {jumlah}.";
         }
     }
     public class Transfer : IPembayaran<string>
@@ -46,10 +46,10 @@ namespace TubesKPL
         public string GetMetodeName() { return "Transfer Bank"; }
         public string GetDetailPembayaran() { return nomorRekening; }
 
-        public void ProsesPembayaran(double jumlah)
+        public string ProsesPembayaran(double jumlah)
         {
             Debug.Assert(jumlah >= 0, "Jumlah pembayaran tidak boleh negatif.");
-            Console.WriteLine($"Membayar dengan {GetMetodeName()} dengan nomor rekening {nomorRekening} sejumlah Rp {jumlah}.");
+            return $"Membayar dengan {GetMetodeName()} dengan nomor rekening {nomorRekening} sejumlah Rp {jumlah}.";
         }
     }
     public class Cash : IPembayaran<int>
@@ -65,38 +65,37 @@ namespace TubesKPL
         public string GetMetodeName() { return "Cash"; }
         public int GetDetailPembayaran() { return uangTunai; }
 
-        public void ProsesPembayaran(double jumlah)
+        public string ProsesPembayaran(double jumlah)
         {
             Debug.Assert(jumlah >= 0, "Jumlah pembayaran tidak boleh negatif.");
             Console.WriteLine($"Membayar dengan {GetMetodeName()} sejumlah Rp {jumlah} dengan jumlah uang Rp {uangTunai}.");
             double kembalian = uangTunai - jumlah;
             if (kembalian < 0)
             {
-                Console.WriteLine($"Uang tidak cukup. Kurang Rp {-kembalian}.");
+                return $"Uang tidak cukup. Kurang Rp {-kembalian}.";
             }
             else
             {
-                Console.WriteLine($"Kembalian Rp {kembalian}.");
+                return $"Kembalian Rp {kembalian}.";
             }
         }
     }
 
-    abstract class MetodePembayaranCreator<TDetail>
+    public abstract class MetodePembayaranCreator<TDetail>
     {
         public abstract IPembayaran<TDetail> FactoryMethod();
 
         public string ProsesPembayaranUtama(double jumlah)
         {
             var pembayaran = FactoryMethod(); // Mendapatkan produk generik
-            pembayaran.ProsesPembayaran(jumlah); // Memanggil operasi pada produk
+            Console.WriteLine(pembayaran.ProsesPembayaran(jumlah)); // Memanggil operasi pada produk
             Console.WriteLine($"Detail pembayaran: {pembayaran.GetDetailPembayaran()}"); // Memanggil generic method pada produk
 
             return $"Creator: Transaksi selesai menggunakan metode {pembayaran.GetMetodeName()}.";
         }
     }
 
-    // Concrete Creator sekarang juga generik dengan tipe detail spesifik
-    class KartuKreditCreator : MetodePembayaranCreator<string>
+    public class KartuKreditCreator : MetodePembayaranCreator<string>
     {
         private string nomorKartu;
 
@@ -111,7 +110,7 @@ namespace TubesKPL
         }
     }
 
-    class TransferCreator : MetodePembayaranCreator<string>
+    public class TransferCreator : MetodePembayaranCreator<string>
     {
         private string nomorRekening;
 
@@ -126,7 +125,7 @@ namespace TubesKPL
         }
     }
 
-    class CashCreator : MetodePembayaranCreator<int>
+    public class CashCreator : MetodePembayaranCreator<int>
     {
         private int uangTunai;
 

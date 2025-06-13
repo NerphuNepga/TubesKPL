@@ -85,9 +85,14 @@ namespace RegisterKendaraan
         {
             List<ACuciKendaraan> ListKendaraan = Form1.GetList();
             string pro = proses.ProsesInput(ListKendaraan[idx], textBox1.Text);
-            MessageBox.Show(ListKendaraan[idx].GetState().ToString());
+            MessageBox.Show(pro);
             form2.ReloadTable();
             this.Hide();
+        }
+
+        public double GetTotal()
+        {
+            return proses.GetHarga();
         }
 
         private void label5_Click(object sender, EventArgs e)
