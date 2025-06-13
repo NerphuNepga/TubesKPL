@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using TubesKPL;
 
 namespace RegisterKendaraan
@@ -19,10 +20,26 @@ namespace RegisterKendaraan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ACuciKendaraan aCuci = new ACuciKendaraan(textBox1.Text, CekButton());
-            ListKendaraan.Add(aCuci);
-            form2.ReloadTable();
-            this.Hide();
+            if (CekButton() == "Tidak Ada") {
+                MessageBox.Show("jenis kendaraan tidak boleh kosong");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Input tidak boleh kosong.");
+                return; 
+            }
+            if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z ]+$")) 
+            {
+                MessageBox.Show("Input Harus Alphabet");
+            }
+            else
+            {
+                ACuciKendaraan aCuci = new ACuciKendaraan(textBox1.Text, CekButton());
+                ListKendaraan.Add(aCuci);
+                form2.ReloadTable();
+                this.Hide();
+            }
         }
         public static List<ACuciKendaraan> GetList()
         {

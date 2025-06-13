@@ -43,6 +43,7 @@ namespace RegisterKendaraan
                 {
                     btnAksi.Text = "Bayar";
                 }
+
                 else
                 {
                     btnAksi.Text = "Kelola";
@@ -55,6 +56,8 @@ namespace RegisterKendaraan
         {
             if (e.ColumnIndex == dataGridView1.Columns["btnAksi"].Index && e.RowIndex >= 0)
             {
+
+
 
                 if (ListKendaraan[e.RowIndex].GetState().ToString() == "Keluar")
                 {

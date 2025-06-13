@@ -142,6 +142,28 @@ namespace TubesKPL
                         return aCuci.GetJenisKendaraan() + " Sedang ditambahi service";
                     }
                     break;
+
+                case State.Keluar:
+                    if (input == "Cuci")
+                    {
+                        Cuci();
+                        aCuci.SetState(state);
+                        jumlah += 15000;
+                        return aCuci.GetJenisKendaraan() + " Sedang dicuci";
+                    }
+                    else if (input == "Keluar")
+                    {
+                        Keluar();
+                        aCuci.SetState(state);
+                        return aCuci.GetJenisKendaraan() + " Sedang dikeluar";
+                    }
+                    else if (input == "Service")
+                    {
+                        jumlah += 50000;
+                        return aCuci.GetJenisKendaraan() + " Sedang ditambahi service";
+                    }
+                    break;
+
             }
 
             return "Perintah tidak tersedia";
