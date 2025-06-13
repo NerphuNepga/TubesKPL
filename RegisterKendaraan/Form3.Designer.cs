@@ -91,6 +91,7 @@
             label5.Size = new Size(281, 39);
             label5.TabIndex = 18;
             label5.Text = "State Kendaraan:";
+            label5.Click += label5_Click;
             // 
             // label6
             // 

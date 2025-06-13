@@ -63,6 +63,7 @@
             label2.Size = new Size(533, 44);
             label2.TabIndex = 3;
             label2.Text = "Masukkan Nama Kendaraan";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
