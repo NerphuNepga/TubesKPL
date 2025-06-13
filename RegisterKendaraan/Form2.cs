@@ -44,8 +44,9 @@ namespace RegisterKendaraan
         {
             if (e.ColumnIndex == dataGridView1.Columns["btnAksi"].Index && e.RowIndex >= 0)
             {
-                Form3 frm = new Form3();
+                Form3 frm = new Form3(this);
                 frm.Show();
+                frm.GetDataKendaraan(e.RowIndex);
             }
         }
 
@@ -53,6 +54,11 @@ namespace RegisterKendaraan
         {
             Form1 frm = new Form1(this);
             frm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

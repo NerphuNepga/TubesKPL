@@ -44,40 +44,43 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Snap ITC", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(59, 87);
+            textBox1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(67, 116);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(376, 45);
+            textBox1.Size = new Size(429, 59);
             textBox1.TabIndex = 1;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Snap ITC", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(59, 49);
+            label2.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(67, 65);
             label2.Name = "label2";
-            label2.Size = new Size(430, 35);
+            label2.Size = new Size(448, 39);
             label2.TabIndex = 3;
             label2.Text = "Masukkan Nama Kendaraan";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Snap ITC", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(59, 154);
+            label3.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(67, 205);
             label3.Name = "label3";
-            label3.Size = new Size(355, 35);
+            label3.Size = new Size(348, 39);
             label3.TabIndex = 4;
             label3.Text = "Pilih Jenis Kendaraan";
             // 
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Snap ITC", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.Location = new Point(59, 206);
+            radioButton1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton1.Location = new Point(67, 275);
+            radioButton1.Margin = new Padding(3, 4, 3, 4);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(96, 31);
+            radioButton1.Size = new Size(99, 35);
             radioButton1.TabIndex = 5;
             radioButton1.TabStop = true;
             radioButton1.Text = "Mobil";
@@ -86,10 +89,11 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Snap ITC", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton2.Location = new Point(59, 243);
+            radioButton2.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton2.Location = new Point(67, 324);
+            radioButton2.Margin = new Padding(3, 4, 3, 4);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(104, 31);
+            radioButton2.Size = new Size(104, 35);
             radioButton2.TabIndex = 6;
             radioButton2.TabStop = true;
             radioButton2.Text = "Motor";
@@ -98,10 +102,11 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Font = new Font("Snap ITC", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton3.Location = new Point(59, 280);
+            radioButton3.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton3.Location = new Point(67, 373);
+            radioButton3.Margin = new Padding(3, 4, 3, 4);
             radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(86, 31);
+            radioButton3.Size = new Size(90, 35);
             radioButton3.TabIndex = 7;
             radioButton3.TabStop = true;
             radioButton3.Text = "Truk";
@@ -110,22 +115,25 @@
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Font = new Font("Snap ITC", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton4.Location = new Point(280, 206);
+            radioButton4.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton4.Location = new Point(320, 275);
+            radioButton4.Margin = new Padding(3, 4, 3, 4);
             radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(134, 31);
+            radioButton4.Size = new Size(140, 35);
             radioButton4.TabIndex = 8;
             radioButton4.TabStop = true;
             radioButton4.Text = "Pesawat";
             radioButton4.UseVisualStyleBackColor = true;
+            radioButton4.CheckedChanged += radioButton4_CheckedChanged;
             // 
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Font = new Font("Snap ITC", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton5.Location = new Point(280, 243);
+            radioButton5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton5.Location = new Point(320, 324);
+            radioButton5.Margin = new Padding(3, 4, 3, 4);
             radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(113, 31);
+            radioButton5.Size = new Size(115, 35);
             radioButton5.TabIndex = 9;
             radioButton5.TabStop = true;
             radioButton5.Text = "Kereta";
@@ -133,10 +141,11 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Snap ITC", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(59, 327);
+            button1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(67, 436);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(201, 62);
+            button1.Size = new Size(230, 83);
             button1.TabIndex = 10;
             button1.Text = "Submit";
             button1.UseVisualStyleBackColor = true;
@@ -146,8 +155,9 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(2, -1);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(802, 455);
+            pictureBox1.Size = new Size(917, 607);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
@@ -155,9 +165,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(button1);
             Controls.Add(radioButton5);
             Controls.Add(radioButton4);
@@ -168,6 +178,7 @@
             Controls.Add(label2);
             Controls.Add(textBox1);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

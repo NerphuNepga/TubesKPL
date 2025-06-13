@@ -84,14 +84,14 @@ namespace TubesKPL
                     {
                         Cuci();
                         aCuci.SetState(state);
-                        jumlah += 5000;
+                        jumlah += 15000;
                         return aCuci.GetNamaKendaraan() + " Sedang dicuci";
                     }
                     else if (input == "Service")
                     {
                         Service();
                         aCuci.SetState(state);
-                        jumlah += 5000;
+                        jumlah += 50000;
                         return aCuci.GetNamaKendaraan() + " Sedang diservice";
                     }
                     else if (input == "Keluar")
@@ -105,7 +105,7 @@ namespace TubesKPL
                     {
                         Service();
                         aCuci.SetState(state);
-                        jumlah += 5000;
+                        jumlah += 50000;
                         return aCuci.GetNamaKendaraan() + " Sedang diservice";
                     }
                     else if (input == "Keluar")
@@ -116,7 +116,7 @@ namespace TubesKPL
                     }
                     else if (input == "Cuci")
                     {
-                        jumlah += 5000;
+                        jumlah += 15000;
                         return aCuci.GetNamaKendaraan() + " Sedang dicuci lagi";
                     }
                     break;
@@ -126,7 +126,7 @@ namespace TubesKPL
                     {
                         Cuci();
                         aCuci.SetState(state);
-                        jumlah += 5000;
+                        jumlah += 15000;
                         return aCuci.GetNamaKendaraan() + " Sedang dicuci";
                     }
                     else if (input == "Keluar")
@@ -137,7 +137,7 @@ namespace TubesKPL
                     }
                     else if (input == "Service")
                     {
-                        jumlah += 5000;
+                        jumlah += 50000;
                         return aCuci.GetNamaKendaraan() + " Sedang ditambahi service";
                     }
                     break;
