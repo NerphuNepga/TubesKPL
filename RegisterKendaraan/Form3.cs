@@ -19,6 +19,7 @@ namespace RegisterKendaraan
     {
         private int idx;
         private Form2 form2;
+        ProsesCuci proses = new ProsesCuci();
         public Form3(Form2 form2)
         {
             this.form2 = form2;
@@ -30,14 +31,15 @@ namespace RegisterKendaraan
         {
             idx = index;
             List<ACuciKendaraan> ListKendaraan = Form1.GetList();
-            label1.Text = ListKendaraan[index].GetNamaKendaraan();
+            label1.Text = ListKendaraan[index].GetNamaPemilik();
             label4.Text = ListKendaraan[index].GetJenisKendaraan();
             label7.Text = ListKendaraan[index].GetState().ToString();
-            
+
         }
 
-        public void UbahSateKendaraan(int index) { 
-            
+        public void UbahSateKendaraan(int index)
+        {
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -83,11 +85,15 @@ namespace RegisterKendaraan
         private void button1_Click(object sender, EventArgs e)
         {
             List<ACuciKendaraan> ListKendaraan = Form1.GetList();
-            ProsesCuci proses = new ProsesCuci();
             string pro = proses.ProsesInput(ListKendaraan[idx], textBox1.Text);
             MessageBox.Show(pro);
             form2.ReloadTable();
             this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
