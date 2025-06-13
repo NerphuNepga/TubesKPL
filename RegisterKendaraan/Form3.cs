@@ -37,9 +37,8 @@ namespace RegisterKendaraan
 
         }
 
-        public void UbahSateKendaraan(int index)
-        {
-
+        public void UbahSateKendaraan(int index) { 
+            
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -86,7 +85,7 @@ namespace RegisterKendaraan
         {
             List<ACuciKendaraan> ListKendaraan = Form1.GetList();
             string pro = proses.ProsesInput(ListKendaraan[idx], textBox1.Text);
-            MessageBox.Show(pro);
+            MessageBox.Show(ListKendaraan[idx].GetState().ToString());
             form2.ReloadTable();
             this.Hide();
         }

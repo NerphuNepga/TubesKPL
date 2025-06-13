@@ -51,7 +51,6 @@
             label2.Size = new Size(293, 39);
             label2.TabIndex = 14;
             label2.Text = "Nama Kendaraan:";
-            label2.Click += label2_Click;
             // 
             // label1
             // 
@@ -62,7 +61,6 @@
             label1.Size = new Size(50, 20);
             label1.TabIndex = 15;
             label1.Text = "label1";
-            label1.Click += label1_Click;
             // 
             // label3
             // 
@@ -73,7 +71,6 @@
             label3.Size = new Size(282, 39);
             label3.TabIndex = 16;
             label3.Text = "Jenis Kendaraan:";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -84,7 +81,6 @@
             label4.Size = new Size(50, 20);
             label4.TabIndex = 17;
             label4.Text = "label4";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -106,7 +102,6 @@
             label6.Size = new Size(398, 39);
             label6.TabIndex = 20;
             label6.Text = "State Kendaraan saat ini:";
-            label6.Click += label6_Click;
             // 
             // label7
             // 
@@ -116,7 +111,6 @@
             label7.Size = new Size(50, 20);
             label7.TabIndex = 21;
             label7.Text = "label7";
-            label7.Click += label7_Click;
             // 
             // button1
             // 
@@ -138,7 +132,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // textBox1
             // 
@@ -146,7 +139,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(202, 27);
             textBox1.TabIndex = 19;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Form3
             // 
