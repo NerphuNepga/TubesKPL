@@ -38,6 +38,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -46,27 +47,32 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Nama, Jenis, State, btnAksi });
-            dataGridView1.Location = new Point(12, 76);
+            dataGridView1.Location = new Point(14, 101);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(724, 275);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(827, 367);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Nama
             // 
             Nama.HeaderText = "Nama";
+            Nama.MinimumWidth = 6;
             Nama.Name = "Nama";
             Nama.Width = 170;
             // 
             // Jenis
             // 
             Jenis.HeaderText = "Jenis";
+            Jenis.MinimumWidth = 6;
             Jenis.Name = "Jenis";
             Jenis.Width = 170;
             // 
             // State
             // 
             State.HeaderText = "State";
+            State.MinimumWidth = 6;
             State.Name = "State";
             State.Width = 170;
             // 
@@ -78,6 +84,7 @@
             dataGridViewCellStyle1.ForeColor = Color.Black;
             btnAksi.DefaultCellStyle = dataGridViewCellStyle1;
             btnAksi.HeaderText = "Aksi";
+            btnAksi.MinimumWidth = 6;
             btnAksi.Name = "btnAksi";
             btnAksi.Text = "Kelola";
             btnAksi.Width = 170;
@@ -85,9 +92,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-1, -2);
+            pictureBox1.Location = new Point(-1, -3);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(802, 455);
+            pictureBox1.Size = new Size(917, 607);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
@@ -96,35 +104,52 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Snap ITC", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 38);
+            label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(14, 51);
             label1.Name = "label1";
-            label1.Size = new Size(557, 35);
+            label1.Size = new Size(565, 39);
             label1.TabIndex = 13;
             label1.Text = "Selamat Datang di ACuciKendaraan";
             // 
             // button1
             // 
             button1.BackColor = Color.Black;
-            button1.Font = new Font("Snap ITC", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(12, 357);
+            button1.Location = new Point(14, 476);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(157, 52);
+            button1.Size = new Size(179, 69);
             button1.TabIndex = 14;
             button1.Text = "Tambah";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.Black;
+            button2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(215, 476);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(179, 69);
+            button2.TabIndex = 15;
+            button2.Text = "Tambah";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form2";
             Text = "Form2";
             Load += Form2_Load;
@@ -144,5 +169,6 @@
         private DataGridViewTextBoxColumn Jenis;
         private DataGridViewTextBoxColumn State;
         private DataGridViewButtonColumn btnAksi;
+        private Button button2;
     }
 }

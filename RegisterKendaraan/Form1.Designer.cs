@@ -44,6 +44,7 @@
             // 
             // textBox1
             // 
+
             textBox1.Font = new Font("Snap ITC", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(67, 116);
             textBox1.Margin = new Padding(3, 4, 3, 4);
