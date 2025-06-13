@@ -13,6 +13,7 @@ namespace RegisterKendaraan
 {
     public partial class Form2 : Form
     {
+        private Form3 frm3;
         public Form2()
         {
             InitializeComponent();
@@ -44,9 +45,14 @@ namespace RegisterKendaraan
         {
             if (e.ColumnIndex == dataGridView1.Columns["btnAksi"].Index && e.RowIndex >= 0)
             {
-                Form3 frm = new Form3(this);
-                frm.Show();
-                frm.GetDataKendaraan(e.RowIndex);
+                if (frm3 == null || frm3.IsDisposed)
+                {
+                    frm3 = new Form3(this);
+                }
+
+                frm3.GetDataKendaraan(e.RowIndex);
+                frm3.Show();
+                frm3.BringToFront();
             }
         }
 
@@ -54,11 +60,6 @@ namespace RegisterKendaraan
         {
             Form1 frm = new Form1(this);
             frm.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
