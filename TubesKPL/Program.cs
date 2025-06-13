@@ -17,7 +17,7 @@ while(input != 0)
 {
     if (input == 1)
     {
-        Console.Write("Masukkan Nama Kendaraan : ");
+        Console.Write("Masukkan Nama Pemilik : ");
         string namaK = Console.ReadLine();
 
         Console.Write("Masukkan Jenis Kendaraan : ");
@@ -45,24 +45,44 @@ double total = Konversi.KonversiHarga(proses.jumlah, aCuci.GetJenisKendaraan().T
 
 ACuciKendaraan kci = config.ReadConfigFile();
 
-Console.WriteLine();
-Console.WriteLine("================================");
-Console.WriteLine("Detail Pembayaran");
-Console.WriteLine("================================");
-Console.WriteLine("Nama kendaraan   : " + kci.namaKendaraan);
-Console.WriteLine("Jenis kendaraan  : " + kci.jenisKendaraan);
-Console.WriteLine("Total Harga      : Rp. " + total);
+Menu.MenuPembayaran(kci.namaPemilik, kci.jenisKendaraan, total);
 
 Console.WriteLine("Pilih metode pembayaran: Kartu Kredit, Transfer, Cash.");
 string metodeBayar = Console.ReadLine();
 try
 {
-    var metodePembayaran = PemilihanMetode.PilihMetode(metodeBayar, total);
+    switch (metodeBayar.ToLower())
+    {
+        case "kartu kredit":
+            Console.Write("Masukan nomor kartu: ");
+            string noKartu = Console.ReadLine();
+            KartuKreditCreator kartuCreator = new KartuKreditCreator(noKartu);
+            Console.WriteLine(kartuCreator.ProsesPembayaranUtama(total));
+            break;
 
-    Type tipeBayar = typeof(MetodePembayaran<>).MakeGenericType(metodePembayaran.GetType());
-    dynamic bayar = Activator.CreateInstance(tipeBayar, metodePembayaran);
+        case "transfer":
+            Console.Write("Masukan nomor rekening: ");
+            string noRekening = Console.ReadLine();
+            TransferCreator transferCreator = new TransferCreator(noRekening);
+            Console.WriteLine(transferCreator.ProsesPembayaranUtama(total));
+            break;
 
-    bayar.Bayar(total);
+        case "cash":
+            Console.Write("Masukkan jumlah uang yang anda pakai: ");
+            if (int.TryParse(Console.ReadLine(), out int tunai))
+            {
+                CashCreator cashCreator = new CashCreator(tunai);
+                Console.WriteLine(cashCreator.ProsesPembayaranUtama(total));
+            }
+            else
+            {
+                throw new FormatException("Input jumlah uang tunai tidak valid.");
+            }
+            break;
+
+        default:
+            throw new ArgumentException("Metode pembayaran tidak didukung.");
+    }
 }
 catch (Exception ex)
 {

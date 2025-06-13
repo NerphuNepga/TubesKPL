@@ -24,7 +24,8 @@ namespace RegisterKendaraan
             form2.ReloadTable();
             this.Hide();
         }
-        public static List<ACuciKendaraan> GetList() {
+        public static List<ACuciKendaraan> GetList()
+        {
             return ListKendaraan;
         }
         private string CekButton()
@@ -50,6 +51,16 @@ namespace RegisterKendaraan
                 return radioButton5.Text;
             }
             return "Tidak Ada";
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
