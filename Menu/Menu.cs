@@ -14,7 +14,7 @@
             Console.WriteLine("================================");
         }
 
-        public static void MenuPembayaran(string namaPemilik, string jenisKendaraan, int total)
+        public static void MenuPembayaran(string namaPemilik, string jenisKendaraan, double total)
         {
             Console.WriteLine();
             Console.WriteLine("================================");
