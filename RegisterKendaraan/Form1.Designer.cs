@@ -44,7 +44,6 @@
             // 
             // textBox1
             // 
-
             textBox1.Font = new Font("Snap ITC", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(67, 116);
             textBox1.Margin = new Padding(3, 4, 3, 4);
@@ -60,9 +59,9 @@
             label2.Font = new Font("Snap ITC", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(67, 65);
             label2.Name = "label2";
-            label2.Size = new Size(533, 44);
+            label2.Size = new Size(480, 44);
             label2.TabIndex = 3;
-            label2.Text = "Masukkan Nama Kendaraan";
+            label2.Text = "Masukkan Nama Pemilik";
             label2.Click += label2_Click;
             // 
             // label3
