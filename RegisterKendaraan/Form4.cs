@@ -7,9 +7,11 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TubesKPL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RegisterKendaraan
 {
@@ -56,36 +58,54 @@ namespace RegisterKendaraan
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            switch (metodePembayaran)
+            if (string.IsNullOrWhiteSpace(isiNominal.Text))
             {
-                case "kartu kredit":
-                    KartuKreditCreator kartuCreator = new KartuKreditCreator(isiNominal.Text);
-                    string hasilKartu = kartuCreator.ProsesPembayaranUtama(int.Parse(isiHarga.Text));
-                    MessageBox.Show(hasilKartu);
-                    break;
-
-                case "transfer":
-                    TransferCreator transferCreator = new TransferCreator(isiNominal.Text);
-                    string hasilTransfer = transferCreator.ProsesPembayaranUtama(int.Parse(isiHarga.Text));
-                    MessageBox.Show(hasilTransfer);
-                    break;
-
-                case "cash":
-                    CashCreator cashCreator = new CashCreator(int.Parse(isiNominal.Text));
-                    string hasilCash = cashCreator.ProsesPembayaranUtama(int.Parse(isiHarga.Text));
-                    MessageBox.Show(hasilCash);
-                    break;
-                default:
-                    throw new ArgumentException("Metode pembayaran tidak didukung.");
+                MessageBox.Show("Input tidak boleh kosong.");
+                return;
             }
-            listKendaraan.RemoveAt(idx);
-            form2.ReloadTable();
-            this.Hide();
+            if (!Regex.IsMatch(isiNominal.Text, @"^[0-9]+$"))
+            {
+                MessageBox.Show("Input Harus Angka");
+            }
+            else
+            {
+                switch (metodePembayaran)
+                {
+                    case "kartu kredit":
+                        KartuKreditCreator kartuCreator = new KartuKreditCreator(isiNominal.Text);
+                        string hasilKartu = kartuCreator.ProsesPembayaranUtama(int.Parse(isiHarga.Text));
+                        MessageBox.Show(hasilKartu);
+                        break;
+
+                    case "transfer":
+                        TransferCreator transferCreator = new TransferCreator(isiNominal.Text);
+                        string hasilTransfer = transferCreator.ProsesPembayaranUtama(int.Parse(isiHarga.Text));
+                        MessageBox.Show(hasilTransfer);
+                        break;
+
+                    case "cash":
+                        CashCreator cashCreator = new CashCreator(int.Parse(isiNominal.Text));
+                        if (int.Parse(isiNominal.Text) < int.Parse(isiHarga.Text))
+                        {
+                            MessageBox.Show("Duit Kurang");
+                        }
+                        else
+                        {
+                            string hasilCash = cashCreator.ProsesPembayaranUtama(int.Parse(isiHarga.Text));
+                            MessageBox.Show(hasilCash);
+                        }
+                        break;
+                    default:
+                        throw new ArgumentException("Metode pembayaran tidak didukung.");
+                }
+                listKendaraan.RemoveAt(idx);
+                form2.ReloadTable();
+                this.Hide();
+            }
         }
 
         private void kreditPic_Click(object sender, EventArgs e)

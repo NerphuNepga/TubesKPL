@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TubesKPL;
@@ -84,10 +85,22 @@ namespace RegisterKendaraan
         private void button1_Click(object sender, EventArgs e)
         {
             List<ACuciKendaraan> ListKendaraan = Form1.GetList();
-            string pro = proses.ProsesInput(ListKendaraan[idx], textBox1.Text);
-            MessageBox.Show(pro);
-            form2.ReloadTable();
-            this.Hide();
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Input tidak boleh kosong.");
+                return;
+            }
+            if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z ]+$"))
+            {
+                MessageBox.Show("Input Harus Alphabet");
+            }
+            else {
+                string pro = proses.ProsesInput(ListKendaraan[idx], textBox1.Text);
+                MessageBox.Show(pro);
+                form2.ReloadTable();
+                this.Hide();
+            }
+                
         }
 
         public double GetTotal()
